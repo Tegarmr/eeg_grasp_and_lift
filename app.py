@@ -19,12 +19,12 @@ TARGET_FS = 250
 CHANNELS = 32
 EVENT_ORDER = ['HandStart', 'FirstDigitTouch', 'BothStartLoadPhase', 'LiftOff', 'Replace', 'BothReleased']
 OPTIMAL_THRESHOLDS = {
-    'HandStart': 0.30,
-    'FirstDigitTouch': 0.50,
-    'BothStartLoadPhase': 0.50,
-    'LiftOff': 0.45,
-    'Replace': 0.15,
-    'BothReleased': 0.15
+    'HandStart': 0.60,
+    'FirstDigitTouch': 0.68,
+    'BothStartLoadPhase': 0.67,
+    'LiftOff': 0.57,
+    'Replace': 0.26,
+    'BothReleased': 0.24
 }
 
 # --- DEFINISI CUSTOM LAYER (Wajib untuk load model) ---
@@ -91,8 +91,7 @@ Model menggunakan arsitektur **CNN + LSTM + SE Block**.
 
 # Sidebar
 st.sidebar.header("Konfigurasi")
-model_path = st.sidebar.text_input("Path Model (.keras)", "best_model.keras")
-model = load_trained_model(model_path)
+model = load_trained_model('best_model.keras')
 
 if model is None:
     st.sidebar.warning("⚠️ File model tidak ditemukan. Menggunakan mode simulasi prediksi (output acak).")
