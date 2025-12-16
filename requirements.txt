@@ -1,0 +1,6 @@
+streamlit
+numpy<2
+pandas
+scipy
+plotly
+tensorflow==2.19.0
